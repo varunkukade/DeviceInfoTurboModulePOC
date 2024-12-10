@@ -9,9 +9,18 @@
     "start": "react-native start",
     "test": "jest"
   },
+  "codegenConfig": {
+    "name": "NativeDeviceInformationSpec",
+    "type": "modules",
+    "jsSrcsDir": "specs",
+    "android": {
+      "javaPackageName": "com.nativedeviceinformation"
+    }
+  },
   "dependencies": {
     "react": "18.3.1",
-    "react-native": "0.76.5"
+    "react-native": "0.76.5",
+    "react-native-linear-gradient": "2.8.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
