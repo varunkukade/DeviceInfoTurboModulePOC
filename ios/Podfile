@@ -16,7 +16,7 @@ end
 
 target 'DeviceInfoTurboModulePOC' do
   config = use_native_modules!
-
+  pod 'DeviceKit', '~> 5.5'
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.

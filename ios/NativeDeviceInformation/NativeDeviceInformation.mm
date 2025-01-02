@@ -6,10 +6,14 @@
 //
 
 #import "NativeDeviceInformation.h"
+#import "DeviceInfoTurboModulePOC-Swift.h" //imports swift implementation class
 
 @implementation NativeDeviceInformation
 
-RCT_EXPORT_MODULE()
+RCT_EXPORT_MODULE() //export module to obj-c runtime.
+
+//create instance of swift class
+NativeDeviceInformationImpl *nativedeviceinformation = [[NativeDeviceInformationImpl alloc] init];
 
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
     (const facebook::react::ObjCTurboModule::InitParams &)params
@@ -18,67 +22,67 @@ RCT_EXPORT_MODULE()
 }
 
 - (NSString *)getAvailableMemory {
-    return @"1024MB"; // Static available memory
+    return [nativedeviceinformation getAvailableMemory];
 }
 
 - (NSNumber *)getBatteryPercentage {
-    return @(85); // Static battery percentage
+    return [nativedeviceinformation getBatteryPercentage];
 }
 
 - (NSString *)getDevice {
-    return @"iPhone14,2"; // Static device identifier
+    return [nativedeviceinformation getDevice];
 }
 
 - (NSString *)getDeviceBrand {
-    return @"Apple"; // Static device brand
+    return [nativedeviceinformation getDeviceBrand];
 }
 
 - (NSString *)getDeviceManufacturer {
-    return @"Apple Inc."; // Static device manufacturer
+    return [nativedeviceinformation getDeviceManufacturer];
 }
 
 - (NSString *)getDeviceModel {
-    return @"iPhone 13 Pro"; // Static device model
+    return [nativedeviceinformation getDeviceModel];
 }
 
 - (NSString *)getHardware {
-    return @"A15 Bionic"; // Static hardware identifier
+    return [nativedeviceinformation getHardware];
 }
 
 - (NSNumber *)getIsACBatteryCharge {
-    return @(1); // Static value indicating AC charging (true)
+    return [nativedeviceinformation getIsACBatteryCharge];
 }
 
 - (NSNumber *)getIsBatteryCharging {
-    return @(1); // Static value indicating battery is charging (true)
+    return [nativedeviceinformation getIsBatteryCharging];
 }
 
 - (NSNumber *)getIsLowMemory {
-    return @(0); // Static value indicating low memory (false)
+    return [nativedeviceinformation getIsLowMemory];
 }
 
 - (NSNumber *)getIsUSBBatteryCharge {
-    return @(0); // Static value indicating USB charging (false)
+    return [nativedeviceinformation getIsUSBBatteryCharge];
 }
 
 - (NSString *)getOsName {
-    return @"iOS"; // Static OS name
+    return [nativedeviceinformation getOsName];
 }
 
 - (NSString *)getOsVersion {
-    return @"16.1"; // Static OS version
+    return [nativedeviceinformation getOsVersion];
 }
 
 - (NSString *)getProduct {
-    return @"iPhone"; // Static product name
+    return [nativedeviceinformation getProduct];
 }
 
 - (NSString *)getReadableVersion {
-    return @"1.0.0 (Build 10)"; // Static readable version
+    return [nativedeviceinformation getReadableVersion];
 }
 
 - (NSString *)getTotalMemory {
-    return @"4096MB"; // Static total memory
+    return [nativedeviceinformation getTotalMemory];
 }
 
 @end
