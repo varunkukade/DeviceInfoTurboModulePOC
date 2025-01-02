@@ -60,10 +60,11 @@ function App(): JSX.Element {
       <LinearGradient
         colors={['#e9ecef', '#f8f9fa']}
         start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}
-        style={styles.infoRowGradient}>
-        <Text style={styles.infoLabel}>{label}</Text>
-        <Text style={styles.infoValue}>{value}</Text>
+        end={{x: 1, y: 0}}>
+        <View style={styles.infoRowGradient}>
+          <Text style={styles.infoLabel}>{label}</Text>
+          <Text style={styles.infoValue}>{value}</Text>
+        </View>
       </LinearGradient>
     </View>
   );
@@ -85,10 +86,10 @@ function App(): JSX.Element {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}>
         {/* Header with Gradient */}
-        <LinearGradient
-          colors={['#3498db', '#2980b9']}
-          style={styles.headerGradient}>
-          <Text style={styles.headerTitle}>Device Details</Text>
+        <LinearGradient colors={['#3498db', '#2980b9']}>
+          <View style={styles.headerGradient}>
+            <Text style={styles.headerTitle}>Device Details</Text>
+          </View>
         </LinearGradient>
 
         <View style={styles.contentContainer}>

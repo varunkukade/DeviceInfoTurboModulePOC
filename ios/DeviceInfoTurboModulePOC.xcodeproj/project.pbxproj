@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A5F205D92E4987A6A4529E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		00E356F31AD99517003FC87E /* DeviceInfoTurboModulePOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* DeviceInfoTurboModulePOCTests.m */; };
+		0623544C2D26B00500A43DE3 /* NativeDeviceInformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0623544B2D26B00500A43DE3 /* NativeDeviceInformation.mm */; };
 		0C80B921A6F3F58F76C31292 /* libPods-DeviceInfoTurboModulePOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-DeviceInfoTurboModulePOC.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -30,6 +32,8 @@
 		00E356EE1AD99517003FC87E /* DeviceInfoTurboModulePOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviceInfoTurboModulePOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* DeviceInfoTurboModulePOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoTurboModulePOCTests.m; sourceTree = "<group>"; };
+		0623544A2D26B00500A43DE3 /* NativeDeviceInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeDeviceInformation.h; sourceTree = "<group>"; };
+		0623544B2D26B00500A43DE3 /* NativeDeviceInformation.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeDeviceInformation.mm; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* DeviceInfoTurboModulePOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceInfoTurboModulePOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DeviceInfoTurboModulePOC/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = DeviceInfoTurboModulePOC/AppDelegate.mm; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		062354432D26AF3B00A43DE3 /* NativeDeviceInformation */ = {
+			isa = PBXGroup;
+			children = (
+				0623544A2D26B00500A43DE3 /* NativeDeviceInformation.h */,
+				0623544B2D26B00500A43DE3 /* NativeDeviceInformation.mm */,
+			);
+			path = NativeDeviceInformation;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* DeviceInfoTurboModulePOC */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +131,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				062354432D26AF3B00A43DE3 /* NativeDeviceInformation */,
 				13B07FAE1A68108700A75B9A /* DeviceInfoTurboModulePOC */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* DeviceInfoTurboModulePOCTests */,
@@ -245,6 +259,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				00A5F205D92E4987A6A4529E /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				0623544C2D26B00500A43DE3 /* NativeDeviceInformation.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,7 +600,11 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = "$(inherited)  ";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -649,7 +669,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = "$(inherited)  ";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
