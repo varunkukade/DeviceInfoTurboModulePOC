@@ -1,79 +1,46 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# POC: Device Info Turbo Module
+A Turbo Module implementation for React Native's new architecture providing device information.
 
-# Getting Started
+# Android: 
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+<img width="344" alt="Screenshot 2025-01-02 at 7 32 46 PM" src="https://github.com/user-attachments/assets/d13cb894-d32d-4fb3-bbfc-965e7cec7550" />
 
-## Step 1: Start the Metro Server
+# IOS: 
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+<img width="332" alt="Screenshot 2025-01-02 at 7 26 59 PM" src="https://github.com/user-attachments/assets/14ae0449-7953-491b-9365-06383b07baff" />
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Technical Specifications
+- React Native Version: 0.76.5
+- Architecture: New Architecture (Turbo Modules)
+- Code Generation: Using React Native Codegen
+- Android Implementation: Java
+- iOS Implementation: Swift with Bridging Header
 
-```bash
-# using npm
-npm start
+## Features
+- Battery status monitoring
+- Memory usage information
+- Device specifications
+- Operating system details
 
-# OR using Yarn
-yarn start
-```
+## Available Properties
+| Property | Type | Description |
+|----------|------|-------------|
+| `isBatteryCharging` | `boolean` | Indicates if device is currently charging |
+| `isACBatteryCharge` | `boolean` | True if charging via AC adapter (Android only) |
+| `isUSBBatteryCharge` | `boolean` | True if charging via USB (Android only) |
+| `batteryPercentage` | `number` | Current battery level (0-100) |
+| `isLowMemory` | `boolean` | Android: RAM status, iOS: Storage status |
+| `availableMemory` | `string` | Android: Available RAM, iOS: Available Storage |
+| `totalMemory` | `string` | Android: Total RAM, iOS: Total Storage |
+| `appVersion` | `string` | Current application version |
+| `deviceBrand` | `string` | Brand name of the device |
+| `device` | `string` | Device name |
+| `deviceModel` | `string` | Model name of the device |
+| `deviceManufacturer` | `string` | Device manufacturer |
+| `product` | `string` | Product name |
+| `osName` | `string` | Operating system name |
+| `osVersion` | `string` | Operating system version |
+| `hardware` | `string` | Hardware information |
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## License
+MIT
